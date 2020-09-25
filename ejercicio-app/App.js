@@ -10,22 +10,26 @@ export default function App() {
 
 	// Handler to add a new Person
   	const kilometersHandle = (Number) => {
-		if(km > 3){
+		if(name == '' || email == ''){
+			Alert.alert('Error', 'Favor de rellenar todos los campos');
+		}else{
+			if(km > 3){
 
-			//Save the date in the array and assign a random key
-			setPerson(prevPerson => {
-				return [
-					{name, email, km, key: Math.random().toString() },
-					...prevPerson
-				];
-			});
-
-			Alert.alert('¡Felicidades!', 'Nombre: ' + name + '\nCorreo: ' + email);
-		}else {
-      		Alert.alert('Debes de caminar más', 'Tienes que caminar mas de 4km.', [
-        		{text: 'Prometo caminar más...'}
-      		]);
-    	}
+				//Save the date in the array and assign a random key
+				setPerson(prevPerson => {
+					return [
+						{name, email, km, key: Math.random().toString() },
+						...prevPerson
+					];
+				});
+	
+				Alert.alert('¡Felicidades!', 'Nombre: ' + name + '\nCorreo: ' + email);
+			}else {
+				  Alert.alert('Debes de caminar más', 'Tienes que caminar mas de 4km.', [
+					{text: 'Prometo caminar más...'}
+				  ]);
+			}
+		}
   	};
 
 	return (
